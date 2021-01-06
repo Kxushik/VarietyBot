@@ -1,0 +1,2 @@
+# VarietyBot
+Discord Bot WIP
