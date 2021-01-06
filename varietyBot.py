@@ -14,6 +14,21 @@ TOKEN  = data.get('TOKEN')
 
 client = commands.Bot(command_prefix ="$")
 
+@client.command(name = "bothelp")
+async def bothelp(context):
+    myEmbed = discord.Embed(title="Current Supported Commands",description = "Help Commands", color=0x76D7C4)
+    myEmbed.add_field(name="info", value="Displays bot credits", inline=True)
+    myEmbed.add_field(name="poll [question]", value="Generates a yes/no poll with the question", inline=True)
+    myEmbed.add_field(name="flip", value="Generates a coin toss with heads/tails", inline=True)
+    message = await context.message.channel.send(embed=myEmbed)
+    await context.message.delete()
+
+@client.command(name = "info")
+async def info(context):
+    myEmbed = discord.Embed(title="Bot Information ",description = "Created: Jan 2021", color=0x76D7C4)
+    myEmbed.add_field(name="Written By", value="GIT:Kxushik", inline=True)
+    message = await context.message.channel.send(embed=myEmbed)
+    await context.message.delete()
 
 
 @client.command(name = "poll")
